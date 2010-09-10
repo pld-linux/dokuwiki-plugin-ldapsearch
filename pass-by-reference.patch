@@ -1,0 +1,20 @@
+--- dokuwiki-plugin-ldapsearch-20090601/syntax.php	2009-06-01 21:07:10.000000000 +0300
++++ ldapsearch/syntax.php	2010-09-10 14:47:50.078973905 +0300
+@@ -53,7 +53,7 @@
+ 		switch ($state) {
+ 			case DOKU_LEXER_SPECIAL : {
+ 				$matches = array();
+-				if(preg_match("/$urlSyntax/",$match,&$matches)) {
++				if(preg_match("/$urlSyntax/",$match,$matches)) {
+ 					$ldapDetails = array(
+ 								'hostname' => $matches[1],
+ 								'port' => $matches[2],
+@@ -64,7 +64,7 @@
+ 							);
+ 					$data = array( 'result' => null, 'ldapDetails' => $ldapDetails );
+ 					return array($state, $data);          
+-				} elseif(preg_match_all("/$paramSyntax/",$match,&$matches, PREG_SET_ORDER)) {
++				} elseif(preg_match_all("/$paramSyntax/",$match,$matches, PREG_SET_ORDER)) {
+ 					$ldapDetails = array();
+ 					foreach($matches as $pair) {
+ 						$value = preg_replace('/^"(.*?)"$/','$1',$pair[2]);

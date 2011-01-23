@@ -10,6 +10,7 @@ Source0:	http://freecode.baselineit.net/dokuwiki/ldapsearch-latest.zip
 Patch0:		pass-by-reference.patch
 URL:		http://www.dokuwiki.org/plugin:ldapsearch
 BuildRequires:	rpmbuild(macros) >= 1.520
+BuildRequires:	unzip
 Requires:	dokuwiki >= 20061106
 Requires:	php-ldap
 BuildArch:	noarch

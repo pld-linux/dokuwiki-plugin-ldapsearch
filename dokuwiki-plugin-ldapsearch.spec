@@ -28,7 +28,7 @@ telephone numbers) from within your page.
 %prep
 %setup -qc
 mv %{plugin}/* .
-%patch0 -p1
+%patch -P0 -p1
 
 version=$(awk -F"'" '/date/{print $4}' syntax.php)
 if [ "$(echo "$version" | tr -d -)" != %{version} ]; then
